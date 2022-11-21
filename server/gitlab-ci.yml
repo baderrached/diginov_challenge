@@ -1,0 +1,14 @@
+stages:
+  - build
+
+# api rebuild.
+build:
+    stage: build
+    image: docker:latest
+    services:
+        - docker:dind
+    script:
+        - CONTAINER_TEST_IMAGE=${CI_REGISTRY}/${CI_PROJECT_PATH}:${CI_COMMIT_SHORT_SHA}
+        - echo "$REGISTRY_PASSWORD" | docker login -u $REGISTRY_USER  $CI_REGISTRY --password-stdin 
+        - "docker build -t ${CONTAINER_TEST_IMAGE} ."
+        - "docker push ${CONTAINER_TEST_IMAGE}"
