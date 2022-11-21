@@ -1,6 +1,6 @@
 # diginov_challenge
 
-##Install backend
+## Install backend
 
 ```bash
 npm install 
@@ -10,7 +10,7 @@ npm install
 nodemon
 ```
 
-##Install frontend
+## Install frontend
 
 ```bash
 npm install 
@@ -20,7 +20,7 @@ npm install
 npm start
 ```
 
-##Credentials
+## Credentials
 
 [email] : manager@test.com
 [password] : 123456
